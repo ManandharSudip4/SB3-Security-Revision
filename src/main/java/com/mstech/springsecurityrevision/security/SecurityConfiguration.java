@@ -1,4 +1,3 @@
-
 package com.mstech.springsecurityrevision.security;
 
 import org.springframework.context.annotation.Bean;
@@ -25,7 +24,13 @@ public class SecurityConfiguration {
       .formLogin(test -> test.disable())
       .securityMatcher("/**")
       .authorizeHttpRequests(auth ->
-        auth.requestMatchers("/").permitAll().anyRequest().authenticated()
+        auth
+          .requestMatchers("/")
+          .permitAll()
+          .requestMatchers("/auth/login")
+          .permitAll()
+          .anyRequest()
+          .authenticated()
       );
 
     return http.build();
