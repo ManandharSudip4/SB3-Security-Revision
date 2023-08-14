@@ -56,5 +56,42 @@
 
     This is it all the classes can be seen and understood... Reference of this configuration is kept at last.
 
+## Real Login
+    Still this is not a actual login method where we obtain user from database. Here i use user
+    created user or hardcoded the user in backend.
+
+    So first of all, i a UserEntity Class which is used to access the users from the database, or
+    table is formed with this entity.
+
+    About UserService
+    Then Created a service/UserService which acts as a repository to extract data form the database,
+    it is basically an interface to access data from database.
+
+    This service will retuen details of user accourding to username provided to find the user.
+
+    About CustomUserDetailsService
+    This will use UserService or Repository or its method to get the user details and return this
+    details in format of built in UserDetails or in format of Class which extends UserDetails.
+    Here, I used Prinicipal User as return format.
+
+    Security Configuration
+    Two Beans must be added here
+        - Authentication Manager
+            - takes CustomUserDetailsService returned info
+            - Password Encoder
+        - Password Encoder
+
+    In Auth Controller
+        Inside Login controller method or endpoint we use Authentication manager,
+        Use its default UsernamePasswordAuthToken method passing username and password
+        the prinicpal is generated which will be used to generate the JWT
+
+
+
+    This much for Login, I will update Database Configuration in this very repository soon.
+    Although i'd already configured database in previous repos..
 
 [Reference](https://www.youtube.com/playlist?list=PLVuqGBBX_tP3KmownF68ifFmgPQt-ujBg)
+
+
+[Manandhar Sudip](https://manandharsudip.com.np)
