@@ -34,4 +34,4 @@ build/
 
 
 ### User Defined ###
-/src/mian/resources/application.properties
+/src/main/resources/application.properties
