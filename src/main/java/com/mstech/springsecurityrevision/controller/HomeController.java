@@ -9,4 +9,9 @@ public class HomeController {
     public String greetings(){
         return "Hola Mundo!";
     }
+
+    @GetMapping("/secured")
+    public String secured(){
+        return "Successful Login";
+    }
 }
