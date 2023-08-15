@@ -91,6 +91,21 @@
     This much for Login, I will update Database Configuration in this very repository soon.
     Although i'd already configured database in previous repos..
 
+
+## Added Roles
+    In this commit i did few things, refactored AuthController.
+    Made a Service for Authentication purpose. -> service/AuthService.
+
+    Created new user with role other than ADMIN
+
+    And configured permission for new endpoint /admin to have access only for admin.
+
+    That's it for this time...
+
+
+    Soon, exception handling and dtabase integration will be done...
+
+
 [Reference](https://www.youtube.com/playlist?list=PLVuqGBBX_tP3KmownF68ifFmgPQt-ujBg)
 
 

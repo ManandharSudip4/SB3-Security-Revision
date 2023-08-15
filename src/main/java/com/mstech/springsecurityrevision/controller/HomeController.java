@@ -17,4 +17,9 @@ public class HomeController {
     public String secured(@AuthenticationPrincipal UserPrincipal prinicipal){
         return "Successful Login as " + prinicipal.getEmail() + " User ID: " + prinicipal.getUserId() ;
     }
+
+    @GetMapping("/admin")
+    public String admino(@AuthenticationPrincipal UserPrincipal principal){
+        return "Hey Admino! with ADMIN ID: " + principal.getUserId() +  ". What's up?";
+    }
 }
