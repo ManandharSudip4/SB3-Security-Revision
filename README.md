@@ -106,6 +106,14 @@
     Soon, exception handling and dtabase integration will be done...
 
 
+## Tests
+    Did some testing for the very first time.
+
+    Endpoint test? Integration Test?
+
+    All the tests cases can be seen in 
+    src/test/java/com/mstech/springsecurityrevision/controller
+
 [Reference](https://www.youtube.com/playlist?list=PLVuqGBBX_tP3KmownF68ifFmgPQt-ujBg)
 
 

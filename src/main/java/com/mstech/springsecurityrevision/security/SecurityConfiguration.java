@@ -23,6 +23,8 @@ public class SecurityConfiguration {
 
   private final CustomUserDetailsService customUserDetailsService;
 
+  private final UnauthorizedHandler unauthorizedHandler;
+
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http)
     throws Exception {
@@ -37,6 +39,9 @@ public class SecurityConfiguration {
         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
       )
       .formLogin(test -> test.disable())
+      .exceptionHandling(authHand ->
+        authHand.authenticationEntryPoint(unauthorizedHandler)
+      )
       .securityMatcher("/**")
       .authorizeHttpRequests(auth ->
         auth
